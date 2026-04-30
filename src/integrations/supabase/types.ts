@@ -14,7 +14,144 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bankroll_settings: {
+        Row: {
+          daily_limit: number
+          goal: number
+          initial_balance: number
+          monthly_limit: number
+          stop_loss: number
+          updated_at: string
+          user_id: string
+          weekly_limit: number
+        }
+        Insert: {
+          daily_limit?: number
+          goal?: number
+          initial_balance?: number
+          monthly_limit?: number
+          stop_loss?: number
+          updated_at?: string
+          user_id: string
+          weekly_limit?: number
+        }
+        Update: {
+          daily_limit?: number
+          goal?: number
+          initial_balance?: number
+          monthly_limit?: number
+          stop_loss?: number
+          updated_at?: string
+          user_id?: string
+          weekly_limit?: number
+        }
+        Relationships: []
+      }
+      bets: {
+        Row: {
+          bet_date: string
+          bet_type: string
+          bookmaker: string
+          category: string
+          created_at: string
+          event: string
+          expected_return: number
+          id: string
+          notes: string | null
+          odd: number
+          profit: number
+          received: number
+          result: string
+          stake: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          bet_date?: string
+          bet_type: string
+          bookmaker: string
+          category: string
+          created_at?: string
+          event: string
+          expected_return?: number
+          id?: string
+          notes?: string | null
+          odd?: number
+          profit?: number
+          received?: number
+          result?: string
+          stake?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          bet_date?: string
+          bet_type?: string
+          bookmaker?: string
+          category?: string
+          created_at?: string
+          event?: string
+          expected_return?: number
+          id?: string
+          notes?: string | null
+          odd?: number
+          profit?: number
+          received?: number
+          result?: string
+          stake?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          currency: string
+          display_name: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          currency?: string
+          display_name?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          currency?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_settings: {
+        Row: {
+          notifications: boolean
+          paused_until: string | null
+          theme: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          notifications?: boolean
+          paused_until?: string | null
+          theme?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          notifications?: boolean
+          paused_until?: string | null
+          theme?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
